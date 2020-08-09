@@ -17,5 +17,5 @@ addons:
       description: "<Your project description here>"
     notification_email: njacostac@hotmail.com
     build_command_prepend: ""
-    build_command: "msbuild /t:Rebuild"
+    build_command: "msbuild /p:Configuration=Release /t:Rebuild ASPVulnerableLab.sln"
     branch_pattern: coverity_scan
