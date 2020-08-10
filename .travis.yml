@@ -6,10 +6,7 @@ env:
    # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
    #   via the "travis encrypt" command using the project repo's public key
    - secure: "2POjfP/2py29Y5Xk26IERoTdUXhXi2iRBGTX+o1cedkInrYkhcSdN+ODfZRUMdqGqbittP6yE83n2Rg5VeNkwCrALpUCe7mm+QJ6eFFMbqe2Uy0NvN3CYSvyoOzp1ZHe7nWXQpBnC/nk6B42rWvFkNfhmwK6BKGbM3VOLszIfAG+jFXojf3tWxQ9SmwUDwiZDTarjguDfdqw8VBqojAhhZ91aq7+1ZMJj47HaW/EOgK6S0GIk4hBrUduYHgYTY/UsKxQI+i7r42O8Q28GmyPhf0/ucQr8Tp36EhVASysAJ97kzMJjdZBvmd70nZT2QSf3WaY9QQvk7ZdJHApMYnEPVYfW3ZQvoQHqTkboLbI9vfwikSdkbTCGtaRXneMO99QO7+9mEKIkyeDpRpwXe9ZN5r/4CoaquURZS9W4GK26RQTA4XPj4v0q/Of7qbBWByJXoRpm6PbZyhC/oJwIOZPDASgkrkihWWsImp1jw2QYUOcQJjXfJCKsVBLW9mtckTOW6ZfBCX+BY/rgzFbk0GAhqZUqApbiP7/pRkuwqTEjSQqSNRXoPGWtQHxs+v4ghgrVt3sBl0DzHY5UtNvyJi07P5tZmivke2uzZzEioDkVBEbsIJ0vdvp1JcLKH/YOfKSckBjfPHdxeiVmU4h1/9/4xsxe7cpJObXbYZO1FJxq6E="
-
-before_install:
-  - echo -n | openssl s_client -connect https://scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
-
+   
 addons:
   coverity_scan:
     project:
@@ -18,4 +15,4 @@ addons:
     notification_email: njacostac@hotmail.com
     build_command_prepend: ""
     build_command: "msbuild /p:Configuration=Release /t:Rebuild ASPVulnerableLab.sln"
-    branch_pattern: coverity_scan
+    branch_pattern: master
