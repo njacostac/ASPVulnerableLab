@@ -6,7 +6,7 @@ env:
 addons:
   coverity_scan:
     project:
-      name: njacostac/ASPVulnerableLab
+      name: "njacostac/ASPVulnerableLab"
       description: "<Your project description here>"
     notification_email: njacostac@hotmail.com
     build_command_prepend: ''
